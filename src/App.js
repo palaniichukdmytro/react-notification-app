@@ -8,10 +8,28 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 
-// const wrapperStyle = {
-//   width: '100%',
-//   padding: '0 calc(3% - 2px)'
-// }
+// some datas
+const activities = [
+  {
+    timestamp: new Date().getTime(),
+    text: "Ate lunch",
+    user: {
+      id: 1, name: 'Nate'
+    //   avatar: "http://www.croop.cl/UI/twitter/images/doug.jpg"
+    },
+    comments: [{ from: 'Ari', text: 'Me too!' }]
+  },
+  {
+    timestamp: new Date().getTime(),
+    text: "Woke up early for a beautiful run",
+    user: {
+      id: 2, name: 'Ari'
+    //   avatar: "http://www.croop.cl/UI/twitter/images/doug.jpg"
+    },
+    comments: [{ from: 'Nate', text: 'I am so jealous' }]
+  },
+]
+
 
 
 class App extends Component {
@@ -21,7 +39,7 @@ class App extends Component {
       <div className="notificationWrapper" >
         <div className="panel" >
           <Header title='Notification App' />
-          <Content />
+          <Content activities={activities}/>
         </div>
       </div>
     </MuiThemeProvider>
